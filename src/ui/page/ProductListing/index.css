@@ -1,0 +1,32 @@
+.product-container{
+    display: flex;
+    flex-wrap: wrap;
+justify-content: center;
+}
+
+.each-card{
+    width: 350px;
+    margin: 20px;
+
+}
+
+.card-img{
+    height: 15vw;
+    object-fit: cover;
+}
+
+.btn.btn-primary{
+    background-color: rgba(201, 200, 174, 0.79);
+    border-color: rgba(201, 200, 174, 0.79);
+}
+
+.btn.btn-primary:Hover{
+    background-color: rgba(182, 162, 159, 0.79);
+    border-color: rgba(182, 162, 159, 0.79);
+}
+
+
+
+
+
+

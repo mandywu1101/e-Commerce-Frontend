@@ -1,0 +1,111 @@
+.whole-navbar{
+    background-color: rgba(253, 231, 223, 0.56);
+}
+.nav-bar {
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+.search-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.form-control {
+    width: 100px;
+    height: 30px;
+}
+
+.main-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-bar-button:hover {
+    color: #313030;
+}
+
+.main-bar-button {
+    text-decoration: none;
+    color: #5b5959;
+}
+
+#basic-nav-dropdown {
+    text-decoration: none;
+    color: #5b5959;
+}
+
+.main-bar-button.nav-link {
+    color: #5b5959;
+}
+
+.main-bar-button.nav-link:hover {
+    color: #313030;
+}
+
+#basic-nav-dropdown:hover {
+    color: #313030;
+}
+
+.personal-bar {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+.profile-icon {
+    width: 25px;
+    height: 25px;
+}
+
+.cart-icon {
+    width: 25px;
+    height: 25px;
+}
+
+.heart-icon {
+    width: 25px;
+    height: 25px;
+}
+
+.magnifier-icon {
+    width: 25px;
+    height: 25px;
+}
+
+.btn.btn-secondary {
+    width: 20px;
+    height: 10px;
+}
+
+.btn.btn-secondary.data-mdb-content {
+    width: 20px;
+    height: 10px;
+}
+
+.personal-bar p {
+    color: #5b5959;
+    font-size: 10px;
+    margin-top: 5px;
+}
+
+@media screen and (max-width: 1000px) {
+    .personal-bar {
+        visibility: hidden;
+    }
+    .search-bar {
+        visibility: hidden;
+    }
+}
+
+.btn{
+    color: #d5b2b2;
+}

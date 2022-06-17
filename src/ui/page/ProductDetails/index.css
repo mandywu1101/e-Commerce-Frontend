@@ -1,0 +1,32 @@
+.product-container{
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+
+}
+
+#photo{
+    width: 40%;
+}
+.product-image{
+    width: 40%;
+    border: 5px dot-dot-dash black;
+}
+
+.product-description{
+    flex-direction: column;
+    border: 5px dot-dot-dash black;
+    display: flex;
+
+}
+
+.btn.quantity{
+    border-color: rgba(201, 200, 174, 0.79);
+    background-color: rgba(201, 200, 174, 0.79);
+}
+
+.product-description h3{
+    font-size: 20px;
+    flex-wrap: wrap;
+}
+

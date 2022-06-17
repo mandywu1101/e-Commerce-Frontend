@@ -1,0 +1,44 @@
+[
+  {
+    "product_id": 1,
+    "product_name": "純色簡約風的吊帶連身裙",
+    "image_url": "https://bit.ly/3xKnsZg",
+    "price": 192.00,
+    "hasStock": true
+  },
+  {
+    "product_id": 2,
+    "product_name": "柔軟親膚短身外套\uD83C\uDF42",
+    "image_url": "https://bit.ly/3MQ00hF",
+    "price": 228.00,
+    "hasStock": true
+  },
+  {
+    "product_id": 3,
+    "product_name": "露肩反領直紋毛衣",
+    "image_url": "https://bit.ly/3NRZzo3",
+    "price": 138.00,
+    "hasStock": true
+  },
+  {
+    "product_id": 4,
+    "product_name": "方頭粗踭貼腿短靴 ",
+    "image_url": "https://bit.ly/3MIQaxS",
+    "price": 230.00,
+    "hasStock": true
+  },
+  {
+    "product_id": 5,
+    "product_name": "氣質網紗露肩連身裙\uD83D\uDC96",
+    "image_url": "https://bit.ly/3MLhrzH",
+    "price": 188.00,
+    "hasStock": true
+  },
+  {
+    "product_id": 6,
+    "product_name": "小香風蝴蝶結連身裙✨美到尖叫\uD83D\uDC96",
+    "image_url": "https://bit.ly/3MQbEsO",
+    "price": 350.00,
+    "hasStock": true
+  }
+]
