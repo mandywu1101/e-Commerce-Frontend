@@ -1,8 +1,17 @@
-.whole-navbar{
+p{
+    font-size: 15px;
+    color: #5b5959;
+}
+.color-Nav.navbar.navbar-expand-lg.navbar-light{
+    height: auto;
+    padding: 1px;
+}
+
+.color-Nav{
     background-color: rgba(253, 231, 223, 0.56);
 }
+
 .nav-bar {
-    height: 100px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -11,22 +20,27 @@
 
 
 .search-bar {
+    width: 20%;
     display: flex;
     flex-direction: row;
     align-items: center;
-
+    margin-right: 10px;
 }
-
+#basic-nav-dropdown{
+    padding-left: 5px;
+}
 .form-control {
     width: 100px;
     height: 30px;
 }
 
 .main-bar {
+    width: 60%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    position: center;
 }
 
 .main-bar-button:hover {
@@ -41,6 +55,7 @@
 #basic-nav-dropdown {
     text-decoration: none;
     color: #5b5959;
+    font-size: 20px;
 }
 
 .main-bar-button.nav-link {
@@ -59,16 +74,21 @@
     display: flex;
     flex-direction: row;
     margin-top: 20px;
+    margin-bottom: 5px;
 }
 
 .profile-icon {
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
+    margin-top: 20px;
+    margin-bottom: 1px;
 }
 
 .cart-icon {
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
+    margin-top: 20px;
+    margin-bottom: 1px;
 }
 
 .heart-icon {
@@ -91,13 +111,29 @@
     height: 10px;
 }
 
-.personal-bar p {
-    color: #5b5959;
-    font-size: 10px;
-    margin-top: 5px;
-}
+/*.personal-bar p {*/
+/*    color: #5b5959;*/
+/*    font-size: 10px;*/
+/*    margin-top: 5px;*/
+/*}*/
+
+/*#basic-navbar-nav{}*/
 
 @media screen and (max-width: 1000px) {
+    .navbar-collapse.collapse.show p{
+        font-size: 15px;
+    }
+    .main-bar-button.nav-link{
+        height: 50px;
+        border-bottom-style: solid;
+    }
+    .cart-icon{
+        display: none;
+    }
+    .profile-icon{
+        display: none;
+    }
+
     .personal-bar {
         visibility: hidden;
     }
@@ -108,4 +144,8 @@
 
 .btn{
     color: #d5b2b2;
+}
+
+.basic-navbar-nav{
+    margin-right: 50px;
 }

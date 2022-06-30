@@ -1,26 +1,38 @@
-.product-container{
+.product-container {
     display: flex;
     flex-wrap: wrap;
-justify-content: center;
+    justify-content: center;
 }
 
-.each-card{
+.sorting{
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    justify-content: flex-end;
+}
+
+.product-container.container{
+    padding-top: 0px;
+}
+
+
+.each-card {
     width: 350px;
     margin: 20px;
 
 }
 
-.card-img{
+.card-img {
     height: 15vw;
     object-fit: cover;
 }
 
-.btn.btn-primary{
+.btn.btn-primary {
     background-color: rgba(201, 200, 174, 0.79);
     border-color: rgba(201, 200, 174, 0.79);
 }
 
-.btn.btn-primary:Hover{
+.btn.btn-primary:Hover {
     background-color: rgba(182, 162, 159, 0.79);
     border-color: rgba(182, 162, 159, 0.79);
 }

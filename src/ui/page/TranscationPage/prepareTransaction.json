@@ -1,0 +1,36 @@
+{
+  "userId": 2,
+  "transaction_id": 7,
+  "user_id": 2,
+  "date_time": "20220618T22:05:07",
+  "status": "PREPARED",
+  "total": 1224.00,
+  "item": [
+    {
+      "transaction_product": 8,
+      "items": {
+        "productId": 2,
+        "name": "柔軟親膚短身外套\uD83C\uDF42",
+        "description": "超級柔軟舒服的外套\n厚薄適中 非常適合初秋的天氣\n款式百搭 設有白、黃及藍色",
+        "imageUrl": "https://img.cdn.91app.hk/webapi/imagesV3/Original/SalePage/280600/0/637910655817770000?v=1",
+        "price": 228.00,
+        "stock": 8
+      },
+      "quantity": 2,
+      "subtotal": 456.00
+    },
+    {
+      "transaction_product": 9,
+      "items": {
+        "productId": 1,
+        "name": "純色簡約風的吊帶連身裙",
+        "description": "小心機露鎖骨設計 \n木耳邊的手袖位 \n穿起來更添嬌柔感☺️\n設有粉紅、杏及黑色\n",
+        "imageUrl": "https://img.cdn.91app.hk/webapi/imagesV3/Original/SalePage/279002/0/637910655734600000?v=1",
+        "price": 192.00,
+        "stock": 9
+      },
+      "quantity": 4,
+      "subtotal": 768.00
+    }
+  ]
+}

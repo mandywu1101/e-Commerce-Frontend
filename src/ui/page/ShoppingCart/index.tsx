@@ -6,7 +6,7 @@ import './index.css'
 import Selector from "../../component/Selector";
 import {useEffect, useState} from "react";
 import {ProductDetailedData} from "../../../data/ProductData";
-import {Params, useNavigate, useParams} from "react-router-dom";
+import {Link, Params, useNavigate, useParams} from "react-router-dom";
 import {getProductDetail} from "../../../resource/GetProductResource";
 import hyggeImage from '../LoginPage/hygge.png';
 import heartImage from "../../component/NavbarTop/icon/heart.png";
@@ -18,6 +18,7 @@ import {
     getShoppingCartItem, putShoppingCartItem,
     removeShoppingCartItem, updateShoppingCartItem
 } from "../../../resource/ShoppingCartResource";
+import {prepareTransaction} from "../../../resource/TransactionResource";
 
 export default function ShoppingCart() {
     const [shoppingCartDataList, setShoppingCartDataList] = useState<ShoppingCartData[] | undefined | null>(undefined);
@@ -68,6 +69,18 @@ export default function ShoppingCart() {
                 }))
         }
     }
+    const  navigate = useNavigate();
+
+    const onApiPrepareTransaction = (transactionId: number)=>{
+        navigate(`/checkout/${transactionId}`)
+    }
+
+    const handleCheckoutOnClick = (event:any) =>{
+        event.currentTarget.disabled = false;
+        prepareTransaction(onApiPrepareTransaction);
+    }
+
+
 
     const calTotalPrice = (): number => {
         let totalPrice: number = 0;
@@ -82,8 +95,8 @@ export default function ShoppingCart() {
     return (
         <div>
             <BasicNavbar/>
-            <div className={"each-column"}>
-                <div className={"inner-container"}>
+            {/*<div className={"each-column"}>*/}
+            {/*    <div className={"inner-container"}>*/}
                     <Row xs={1} md={1} className="g-4">
                         {shoppingCartDataList?.map((value) => (
                             <Col className={"each-shopping-column"}>
@@ -126,25 +139,26 @@ export default function ShoppingCart() {
                                     </div>
                                 </Card>
                                 <hr/>
-                                <p>Subtotal: {value.cart_quantity * value.price}</p>
+                                <p>Subtotal: ${value.cart_quantity * value.price}</p>
                             </Col>
                         ))}
                     </Row>
-                </div>
-                <div className={"total-column"}>
+                {/*</div>*/}
+                {/*<div className={"total-column"}>*/}
                     <div className={"total-part"}>
                     <hr/>
                     <p>Total: ${calTotalPrice()}</p>
-                    </div>
-                    <div className={"checkout-part"}>
-                    <button type="button" className="checkout-button"
-                            aria-label="Left Align" ><span>
+                        <div className={"checkout-part"}>
+                            <button type="button" className="checkout-button"
+                                    aria-label="Left Align"  onClick={(event)=>{handleCheckoutOnClick(event)}} ><span>
                                 <FontAwesomeIcon icon={solid('money-bill-1')} style={{color: "white"}}/> Confirm</span>
-                    </button>
+                            </button>
+                        </div>
                     </div>
-                </div>
 
-            </div>
+                {/*</div>*/}
+
+            {/*</div>*/}
         </div>
     )
 }

@@ -10,6 +10,8 @@ import LoadingSpinner from "../../component/LoadingSpinner";
 import {getProductDetail} from "../../../resource/GetProductResource";
 import Row from "react-bootstrap/Row";
 import {putShoppingCartItem} from "../../../resource/ShoppingCartResource";
+import thanks from "../ThankyouPage/Thanks.png";
+import Footer from "../../component/Footer";
 
 
 type Params = {
@@ -39,10 +41,11 @@ export default function ProductDetails() {
     const [show, setShow] = useState(false);
 
     const onApiPutCartItem = (isSuccess: boolean) => {
-        if(isSuccess){
+        if (isSuccess) {
             setShow(true);
         }
     }
+
 
     const setQuantityPlusOne = (): void => {
         if (productDetailedData && quantity < productDetailedData.stock)
@@ -58,49 +61,52 @@ export default function ProductDetails() {
         <>
             <BasicNavbar/>
             {(productDetailedData) ?
-                <Container className={"product-container"}>
-                    <Row>
-                        <div className={"product-image"}>
-                            <img id={"photo"} src={"https://bit.ly/3xKnsZg"}/>
-                        </div>
-                    </Row>
-                    <Row>
-                        <div className={"product-description"}>
-                            <h2>Name:{productDetailedData?.product_name}</h2>
-                            <h3>Price: ${productDetailedData?.price}</h3>
-                            <h3>Description: {productDetailedData?.description}
-                            </h3>
-                            <h3>Availability Stock : {productDetailedData?.stock}</h3>
-                            {
-                                (productDetailedData.stock > 0)
-                                    ? <>  <Selector quantity={quantity} setQuantityPlusOne={setQuantityPlusOne}
-                                                    setQuantityMinusOne={setQuantityMinusOne}/>
-                                        <br/>
-                                        <Button onClick={() => {
-                                            putShoppingCartItem(productDetailedData.product_id, quantity, onApiPutCartItem)
-                                        }}>
-                                            Add to Cart
-                                        </Button></> :
-                                    <Button disabled variant={"secondary"}>
-                                        Out of stock
+                <div className={"product-container"}>
+                    <div className="product-image"><img className={"images"} src={productDetailedData.image_url}/>
+                    </div>
+                    <div className={"product-description"}>
+                        <div className={"border-inner"}>
+                        <h2>Name:{productDetailedData?.product_name}</h2>
+                            <br/>
+                        <h3>Price: ${productDetailedData?.price}</h3>
+                            <br/>
+                        <h3>Description: {productDetailedData?.description}
+                        </h3>
+                            <br/>
+                        <h3>Availability Stock : {productDetailedData?.stock}</h3>
+                            <br/>
+                        {
+                            (productDetailedData.stock > 0)
+                                ? <>  <Selector quantity={quantity} setQuantityPlusOne={setQuantityPlusOne}
+                                                setQuantityMinusOne={setQuantityMinusOne}/>
+                                    <br/>
+                                    <Button className={"add-to-cart-button"} onClick={() => {
+                                        putShoppingCartItem(productDetailedData.product_id, quantity, onApiPutCartItem)
+                                    }}>
+                                        Add to Cart
                                     </Button>
-                            }
-                        </div>
-                    </Row>
-                </Container>
+                                </> :
+                                <Button className={"out-of-stock-button"} disabled variant={"secondary"}>
+                                    Out of stock
+                                </Button>
+                        }
+                    </div>
+                    </div>
+                </div>
                 : (productDetailedData == undefined)
                     ? <LoadingSpinner/>
                     : <Navigate to="/404" replace/>
             }
 
             <Toast onClose={() => setShow(false)} show={show} delay={5000} autohide
-                   style={{position:"absolute", right:24, bottom:24}}
-            >
+                   style={{position: "absolute", right: 24, bottom: 24}}>
                 <Toast.Header>
                     <strong className="me-auto">Added to Cart</strong>
                 </Toast.Header>
                 <Toast.Body>Woohoo, {quantity} item(s) have been added to cart</Toast.Body>
             </Toast>
+
+            <Footer/>
         </>
 
     )

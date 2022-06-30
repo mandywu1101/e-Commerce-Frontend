@@ -3,32 +3,52 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Ac1 from './img1.jpg';
 import './index.css';
-import {Container, Navbar} from "react-bootstrap";
+import {Button, Container, Navbar} from "react-bootstrap";
 import {useEffect, useState} from "react";
 import {ProductListData} from "../../../data/ProductData";
 import MockData from './response2.json';
 import BasicNavbar from "../../component/NavbarTop";
 import ProductDetails from "../ProductDetails";
 import {Link} from "react-router-dom";
-import {getProductResource} from "../../../resource/GetProductResource";
+import {getProductResource, getProductResourceLowToHigh} from "../../../resource/GetProductResource";
+import IndividualIntervalsExample from "../../component/Carousel";
+import {DropdownButton} from 'react-bootstrap';
+import {Dropdown} from 'react-bootstrap';
+import Footer from "../../component/Footer";
 
 
 export default function ProductListing() {
     const [productListData, setProductListData] = useState<ProductListData[] | undefined>(undefined)
 
     useEffect(() => {
-        getProductResource(setProductListData);
+        if (productListData === undefined){
+            getProductResource(setProductListData);
+        }
     }, [])
 
-    // let moveToProductDetails=()=>{
-    //     return(
-    //         <ProductDetails/>
-    //     )
-    // }
+    const sortProductLowToHigh = () => {
+        getProductResourceLowToHigh(setProductListData);
+    }
+
+    const [sortByHighToLow, setPriceHightoLow] = useState<ProductListData[] | undefined>(undefined)
+
+    const sortProductHighToLow = () =>{
+        const sort = productListData?.sort((a, b) => b.price - a.price)
+        setProductListData(sort);
+        setPriceHightoLow(sort);
+        console.log(sort)
+    }
 
     return (
         <>
             <BasicNavbar/>
+            <IndividualIntervalsExample/>
+            <div className={"sorting"}>
+                <DropdownButton id="sorting-button" title="Sort By">
+                    <Dropdown.Item onClick={sortProductLowToHigh}>Price: Low to High</Dropdown.Item>
+                    <Dropdown.Item onClick={sortProductHighToLow}>Price: High to Low</Dropdown.Item>
+                </DropdownButton>
+            </div>
             <Container className={"product-container"}>
                 {
                     productListData?.map((value) => {
@@ -49,7 +69,8 @@ export default function ProductListing() {
                                                 }
                                             </Card.Text>
                                             {/*<a href="#" className="btn btn-primary" onClick={moveToProductDetails}>Details</a>*/}
-                                          <Link to ={`/product/${value.product_id}`}><a href="#" className="btn btn-primary" >Details</a></Link>
+                                            <Link to={`/product/${value.product_id}`}><a href="#"
+                                                                                         className="btn btn-primary">Details</a></Link>
                                         </Card.Body>
                                     </Card>
                                 </Col>
@@ -60,6 +81,7 @@ export default function ProductListing() {
                 }
 
             </Container>
+            <Footer/>
         </>
     );
 }

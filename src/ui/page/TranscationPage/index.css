@@ -1,0 +1,85 @@
+.each-transaction-column{
+   margin-left: 150px;
+   margin-right: 150px;
+}
+
+.transaction-inner-container.each-shopping-cart{
+    border: none;
+}
+.tranaction-card{
+    height: auto;
+    width: auto;
+}
+
+.credit-card-card{
+    height: auto;
+    width: auto;
+}
+
+.checkout-card{
+    height: auto;
+}
+
+.transaction-inner-container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    margin: auto;
+
+}
+.transaction-details{
+    width: 70%;
+    padding: 20px;
+    height: auto;
+}
+
+.transaction-summery{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    list-style-type: none; /* Remove bullets */
+    padding: 20px;
+    font-size: 20px;
+    height: auto;
+}
+
+.checkout-part li{
+    color: rgba(79, 67, 52, 0.49);
+}
+
+.card-title.h5{
+    color: rgb(89, 66, 23);
+    font-size: 22px;
+}
+
+.pay-button{
+    border-radius: 2px;
+    margin-top: 10px;
+    border: 2px solid rgb(101, 78, 22);
+    background-color:rgb(101, 78, 22);
+    color: white;
+}
+
+.pay-button:hover{
+    border-radius: 2px;
+    border: 2px solid rgb(117, 102, 63);
+    background-color:rgb(117, 102, 63);
+    color: white;
+}
+
+.pay-button:active{
+    border-radius: 2px;
+    border: 2px solid rgb(117, 102, 63);
+    background-color:rgb(117, 102, 63);
+    color: white;
+}
+
+.checkout-part{
+    margin-top: 20px;
+}
+
+.credit-card-form{
+    padding: 20px;
+}

@@ -2,13 +2,14 @@ import './index.css';
 import BasicNavbar from "../../component/NavbarTop";
 import React, {ChangeEvent, FormEvent, FormEventHandler, useEffect, useState} from "react";
 import hyggeImage from './newimage.png';
+import error from './error.png';
+import topBanner2 from './topBanner2.png';
 import {Container} from "react-bootstrap";
 import {
     firebaseAuthServiceOnAuthStateChanged,
     firebaseAuthServiceSignInWithEmailAndPassword, firebaseAuthServiceSignInWithGoogle
 } from "../../../service/AuthService";
 import {useNavigate} from "react-router-dom";
-import {GoogleLoginButton} from "react-social-login-buttons";
 
 
 export default function LoginPage() {
@@ -57,8 +58,8 @@ export default function LoginPage() {
                             <br/>
                             <input id="submit" type="submit" value="Login"/>
                             <hr/>
-                            <GoogleLoginButton onClick={() =>
-                                firebaseAuthServiceSignInWithGoogle(onLoadedSignedIn)} />
+                            {/*<GoogleLoginButton onClick={() =>*/}
+                            {/*    firebaseAuthServiceSignInWithGoogle(onLoadedSignedIn)} />*/}
                         </form>
                     </div>
 

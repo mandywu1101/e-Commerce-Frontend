@@ -128,9 +128,11 @@ h1 {
         flex-direction: column;
         justify-content: center;
         align-items: flex-end;
-        background-image: url(newimage.png);
+        background-image: none;
         position: relative;
-        background-size: auto;
+    }
+    .emptybox{
+        display: none;
     }
 
     .personal-bar {

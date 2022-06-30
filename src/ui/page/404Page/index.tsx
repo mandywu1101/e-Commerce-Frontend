@@ -1,10 +1,14 @@
 import BasicNavbar from "../../component/NavbarTop";
+import error from './error.png';
+import './index.css';
+import Footer from "../../component/Footer";
 
 export default function PageNotFound(){
     return(
         <>
         <BasicNavbar/>
-        <h1>404 Not Found</h1>
+            <img className={"error-image"} src={error}/>
+            <Footer/>
         </>
     )
 }
