@@ -97,6 +97,7 @@ export default function ShoppingCart() {
             <BasicNavbar/>
             {/*<div className={"each-column"}>*/}
             {/*    <div className={"inner-container"}>*/}
+            <Card.Header as="h5" className={"shopping-cart-header"}>Shopping Cart Item</Card.Header>
                     <Row xs={1} md={1} className="g-4">
                         {shoppingCartDataList?.map((value) => (
                             <Col className={"each-shopping-column"}>

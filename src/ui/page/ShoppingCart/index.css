@@ -8,6 +8,12 @@
 
 }
 
+.shopping-cart-header{
+    margin-top: 20px;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
 /*.card {*/
 /*    height: 200px;*/
 /*    flex-direction: row;*/
