@@ -5,19 +5,6 @@ import {TransactionData} from "../data/TransactionData";
 import {ProductListData} from "../data/ProductData";
 import getEnvConfig from "../config/Config";
 
-// export function createTransaction( onApiPrepareTransaction: (isSuccess: boolean) =>void) {
-//     firebaseAuthServiceGetAccessToken()
-//         ?.then((token) => {
-//             axios.post(`${getEnvConfig().baseUrl}.baseUrl/transaction/prepare`,undefined,
-//                 {headers: {Authorization: "Bearer " + token}}).then((response: AxiosResponse<TransactionData>) => {
-//                 onApiPrepareTransaction(true);
-//             }).catch((error) => {
-//                 console.log(error);
-//                 onApiPrepareTransaction(false);
-//             })
-//         })
-// }
-
 export function prepareTransaction(onApiPrepareTransaction: (transactionID: number) => void) {
     firebaseAuthServiceGetAccessToken()
         ?.then((token) => {

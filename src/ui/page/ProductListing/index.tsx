@@ -26,10 +26,12 @@ export default function ProductListing() {
         }
     }, [])
 
+    //try to do the sorting through backend query
     const sortProductLowToHigh = () => {
         getProductResourceLowToHigh(setProductListData);
     }
 
+    //try to do the sorting through frontend
     const [sortByHighToLow, setPriceHightoLow] = useState<ProductListData[] | undefined>(undefined)
 
     const sortProductHighToLow = () =>{

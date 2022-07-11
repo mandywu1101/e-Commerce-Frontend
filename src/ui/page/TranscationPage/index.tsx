@@ -105,30 +105,35 @@ export default function TransactionPage() {
                                 <Card.Header as="h5" className={"card-header"}>Pay Method</Card.Header>
                                 <Form className={"credit-card-form"}>
 
-                                    <Form.Group as={Col} controlId="formGridEmail">
-                                        <Form.Label>Card Number</Form.Label>
-                                        <Form.Control type="password" placeholder="Enter card number"/>
-                                    </Form.Group>
-                                    <br/>
-
-                                    <Row className="mb-3">
-                                        <Form.Group as={Col} controlId="formGridEmail">
-                                            <Form.Label>CVC / CVV</Form.Label>
-                                            <Form.Control />
-                                        </Form.Group>
-
-                                        <Form.Group as={Col} controlId="formGridPassword">
-                                            <Form.Label>Expiry Date</Form.Label>
-                                            <Form.Control type="text" placeholder="Expiry Date"/>
-                                        </Form.Group>
-                                    </Row>
-
                                     <Row className="mb-3">
                                         <Form.Group className="mb-3" controlId="formGridAddress2">
                                             <Form.Label>Cardholder Name</Form.Label>
                                             <Form.Control placeholder="Enter your name"/>
                                         </Form.Group>
                                     </Row>
+
+                                    <Form.Group as={Col} controlId="formGridEmail">
+                                        <Form.Label>Card Number</Form.Label>
+                                        <Form.Control type="password" placeholder="Enter card number"/>
+                                    </Form.Group>
+                                    <br/>
+
+
+
+
+                                    <Row className="mb-3">
+                                        <Form.Group as={Col} controlId="formGridEmail">
+                                            <Form.Label >CVC / CVV</Form.Label>
+                                            <Form.Control placeholder="CVV"/>
+                                        </Form.Group>
+
+                                        <Form.Group as={Col} controlId="formGridPassword">
+                                            <Form.Label>Expiry Date</Form.Label>
+                                            <Form.Control type="text" placeholder="YY/MM"/>
+                                        </Form.Group>
+                                    </Row>
+
+
 
                                     <Button variant="primary" type="submit" > Submit </Button>
                                 </Form>
@@ -143,7 +148,7 @@ export default function TransactionPage() {
                                     <Card.Text>
                                         <li>Date: {transactionData?.date_time}</li>
                                         <li>Bill Status: {transactionData?.status}</li>
-                                        <li>Total: {transactionData?.total}</li>
+                                        <li>Total: ${transactionData?.total}</li>
                                     </Card.Text>
                                     <button type="button" className="pay-button"
                                             aria-label="Left Align" onClick={(event)=>{

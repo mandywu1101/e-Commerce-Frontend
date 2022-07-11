@@ -1,26 +1,35 @@
-.each-transaction-column{
-   margin-left: 150px;
-   margin-right: 150px;
+.each-transaction-column {
+    margin-left: 150px;
+    margin-right: 150px;
 }
 
-.transaction-inner-container.each-shopping-cart{
+@media screen and (max-width: 1000px) {
+    .transaction-inner-container.container {
+        flex-wrap: wrap;
+        width: 100%;
+        margin: 20px;
+    }
+}
+
+.transaction-inner-container.each-shopping-cart {
     border: none;
 }
-.tranaction-card{
+
+.tranaction-card {
     height: auto;
     width: auto;
 }
 
-.credit-card-card{
+.credit-card-card {
     height: auto;
     width: auto;
 }
 
-.checkout-card{
+.checkout-card {
     height: auto;
 }
 
-.transaction-inner-container{
+.transaction-inner-container {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -28,14 +37,15 @@
     margin: auto;
 
 }
-.transaction-details{
-    width: 70%;
+
+.transaction-details {
+    width: auto;
     padding: 20px;
     height: auto;
 }
 
-.transaction-summery{
-    width: 30%;
+.transaction-summery {
+    width: auto;
     display: flex;
     flex-direction: column;
     margin-left: 10px;
@@ -45,41 +55,41 @@
     height: auto;
 }
 
-.checkout-part li{
+.checkout-part li {
     color: rgba(79, 67, 52, 0.49);
 }
 
-.card-title.h5{
+.card-title.h5 {
     color: rgb(89, 66, 23);
     font-size: 22px;
 }
 
-.pay-button{
+.pay-button {
     border-radius: 2px;
     margin-top: 10px;
     border: 2px solid rgb(101, 78, 22);
-    background-color:rgb(101, 78, 22);
+    background-color: rgb(101, 78, 22);
     color: white;
 }
 
-.pay-button:hover{
+.pay-button:hover {
     border-radius: 2px;
     border: 2px solid rgb(117, 102, 63);
-    background-color:rgb(117, 102, 63);
+    background-color: rgb(117, 102, 63);
     color: white;
 }
 
-.pay-button:active{
+.pay-button:active {
     border-radius: 2px;
     border: 2px solid rgb(117, 102, 63);
-    background-color:rgb(117, 102, 63);
+    background-color: rgb(117, 102, 63);
     color: white;
 }
 
-.checkout-part{
+.checkout-part {
     margin-top: 20px;
 }
 
-.credit-card-form{
+.credit-card-form {
     padding: 20px;
 }
